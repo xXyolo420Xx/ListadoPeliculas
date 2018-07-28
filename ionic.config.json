@@ -1,0 +1,7 @@
+{
+  "name": "ListadoPeliculas",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
