@@ -1,6 +1,11 @@
 <ion-searchbar [(ngModel)]="searchText" [showCancelButton]="shouldShowCancel" (ionInput)="onInput()" (ionCancel)="onCancel()">
 </ion-searchbar>
 
+<ion-item>
+  <ion-label>Release date</ion-label>
+  <ion-datetime displayFormat="YYYY" [(ngModel)]="releaseYear" (ionChange)="onYearChange()" [pickerOptions]="customPickerOption"></ion-datetime>
+</ion-item>
+
 <ion-item *ngIf="!searchText">
   <h2>Type a movie to search</h2>
 </ion-item>

@@ -16,6 +16,7 @@ export class MovieListComponent {
 
   request = REQUEST;
   searchText: string;
+  releaseYear: number;
 
   constructor(
     public navCtrl: NavController,
@@ -27,7 +28,7 @@ export class MovieListComponent {
   }
 
   onInput() {
-    this.movieServiceProvider.getMovies(this.searchText, this.request.SEARCH)
+    this.movieServiceProvider.getMovies(this.searchText, this.request.SEARCH, this.releaseYear)
       .subscribe(
         (data) => {
           this.movies = data['Search'];
@@ -38,4 +39,23 @@ export class MovieListComponent {
       )
   }
 
+  onYearChange() {
+    debugger;
+    this.movieServiceProvider.getMovies(this.searchText, this.request.SEARCH, this.releaseYear)
+      .subscribe(
+        (data) => {
+          this.movies = data['Search'];
+        },
+        (error) => {
+          console.error(error);
+        }
+      )
+  }
+
+  customPickerOption = {
+    buttons: [{
+      text: 'Clear',
+      handler: () => this.releaseYear = null
+    }]
+  }
 }
