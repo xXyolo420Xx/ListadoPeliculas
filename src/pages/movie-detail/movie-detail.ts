@@ -26,7 +26,7 @@ export class MovieDetailPage {
   }
 
   ionViewDidLoad() {
-    this.movieServiceProvider.getMovies(this.movieSearch.imdbID, this.request.ID)
+    this.movieServiceProvider.getMovies(this.movieSearch.imdbID, this.request.ID, null)
       .subscribe(
         (data) => {
           //Only way i found to cast the Object into MovieFull
