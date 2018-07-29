@@ -4,17 +4,16 @@ import { REQUEST } from '../../request-config';
 
 @Injectable()
 export class MovieServiceProvider {
-  me = this;
   request = REQUEST;
 
   constructor(private http: HttpClient) { }
 
-  getMovies(title: string) {
-    return this.http.get(this.formatUrl("s", title));
+  getMovies(parameter: string, searchBy: string) {
+    return this.http.get(this.formatUrl(parameter, searchBy));
   }
 
-  formatUrl(option: string, search: string) {
-    return this.request.URL + this.request.KEY + "&" + option + "=" + search;
+  formatUrl(parameter: string, searchBy: string) {
+    return this.request.URL + this.request.KEY + "&" + searchBy + "=" + parameter;
   }
 
 }

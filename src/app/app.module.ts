@@ -11,11 +11,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { MovieServiceProvider } from '../providers/movie-service/movie-service';
 import { MovieListComponent } from '../components/movie-list/movie-list';
 
+import { MovieDetailPage } from '../pages/movie-detail/movie-detail';
+
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    MovieListComponent
+    MovieListComponent,
+    MovieDetailPage
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,8 @@ import { MovieListComponent } from '../components/movie-list/movie-list';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    MovieDetailPage
   ],
   providers: [
     StatusBar,

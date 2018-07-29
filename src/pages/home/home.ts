@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { MovieServiceProvider } from '../../providers/movie-service/movie-service';
+import { MovieSearch } from '../../app/movie-search';
+import { REQUEST } from '../../request-config';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  
+  request = REQUEST;
   searchText: string;
-  movies: any[] = [];
+  movies: MovieSearch[] = [];
 
   constructor(
     public navCtrl: NavController,
@@ -17,7 +20,7 @@ export class HomePage {
   ) { }
 
   onInput() {
-    this.movieServiceProvider.getMovies(this.searchText)
+    this.movieServiceProvider.getMovies(this.searchText, this.request.SEARCH)
       .subscribe(
         (data) => {
           this.movies = data['Search'];
