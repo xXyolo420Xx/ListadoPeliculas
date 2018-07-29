@@ -9,11 +9,13 @@ import { HomePage } from '../pages/home/home';
 
 import { HttpClientModule } from '@angular/common/http';
 import { MovieServiceProvider } from '../providers/movie-service/movie-service';
+import { MovieListComponent } from '../components/movie-list/movie-list';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    MovieListComponent
   ],
   imports: [
     BrowserModule,

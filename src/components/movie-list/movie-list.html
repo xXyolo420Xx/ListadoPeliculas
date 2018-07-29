@@ -1,0 +1,11 @@
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let movie of movies">
+      <ion-avatar item-start>
+        <img [src]="(movie.Poster === 'N/A') ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2000px-No_image_available.svg.png' : movie.Poster">
+      </ion-avatar>
+      <h2>{{ movie.Title}}</h2>
+      <p>{{ movie.year }}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

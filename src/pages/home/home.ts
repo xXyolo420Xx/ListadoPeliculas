@@ -18,7 +18,7 @@ export class HomePage {
   ionViewDidLoad() {
     this.movieServiceProvider.getMovies("pala")
       .subscribe(
-        (data) => { // Success
+        (data) => {
           this.movies = data['Search'];
         },
         (error) => {
