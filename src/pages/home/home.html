@@ -1,4 +1,4 @@
-<ion-header>
+<!--<ion-header>
   <ion-navbar>
     <ion-title>
       Ionic Blank
@@ -12,3 +12,35 @@
     If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
   </p>
 </ion-content>
+-->
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Movies list
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let movie of movies">
+      <ion-avatar item-start>
+        <img [src]="(movie.Poster === 'N/A') ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2000px-No_image_available.svg.png' : movie.Poster">
+      </ion-avatar>
+      <h2>{{ movie.Title}}</h2>
+      <p>{{ movie.year }}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<!--
+
+   "Title":"De slimste mens ter wereld",
+         "Year":"2003–",
+         "imdbID":"tt0403806",
+         "Type":"series",
+         "Poster"
+
+-->

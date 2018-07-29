@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { MovieServiceProvider } from '../../providers/movie-service/movie-service';
 
 @Component({
   selector: 'page-home',
@@ -7,8 +8,23 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  movies: any[] = [];
 
+  constructor(
+    public navCtrl: NavController,
+    public movieServiceProvider: MovieServiceProvider
+  ) { }
+
+  ionViewDidLoad() {
+    this.movieServiceProvider.getMovies("pala")
+      .subscribe(
+        (data) => { // Success
+          this.movies = data['Search'];
+        },
+        (error) => {
+          console.error(error);
+        }
+      )
   }
 
 }
