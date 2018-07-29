@@ -8,6 +8,7 @@ import { MovieServiceProvider } from '../../providers/movie-service/movie-servic
 })
 export class HomePage {
 
+  searchText: string;
   movies: any[] = [];
 
   constructor(
@@ -15,8 +16,8 @@ export class HomePage {
     public movieServiceProvider: MovieServiceProvider
   ) { }
 
-  ionViewDidLoad() {
-    this.movieServiceProvider.getMovies("pala")
+  onInput() {
+    this.movieServiceProvider.getMovies(this.searchText)
       .subscribe(
         (data) => {
           this.movies = data['Search'];
@@ -26,5 +27,4 @@ export class HomePage {
         }
       )
   }
-
 }

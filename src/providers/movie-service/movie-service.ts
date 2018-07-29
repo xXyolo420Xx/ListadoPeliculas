@@ -10,7 +10,7 @@ export class MovieServiceProvider {
   constructor(private http: HttpClient) { }
 
   getMovies(title: string) {
-    return this.http.get(this.formatUrl("s", "pala"));
+    return this.http.get(this.formatUrl("s", title));
   }
 
   formatUrl(option: string, search: string) {

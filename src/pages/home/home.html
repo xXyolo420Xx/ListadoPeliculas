@@ -6,6 +6,14 @@
   </ion-navbar>
 </ion-header>
 
-<movie-list [movies]="movies"></movie-list>
-<!--<app-hero-detail [hero]="selectedHero"></app-hero-detail>-->
+<ion-content>
+  <ion-searchbar
+    [(ngModel)]="searchText"
+    [showCancelButton]="shouldShowCancel"
+    (ionInput)="onInput()"
+    (ionCancel)="onCancel()">
+  </ion-searchbar>
 
+
+  <movie-list [movies]="movies"></movie-list>
+</ion-content>
